@@ -1,7 +1,6 @@
 #!/bin/bash
 # no parameter
-# requires dirs: tests/inputs, tests/oracle, tests/outputs
-# requires program "blite" -- your lexer.
+# Use make compile to generate "valida" before running this script.
 
 T1=$(pwd)
 tests="$T1/tests"
@@ -11,8 +10,8 @@ function total_files {
         find $1 -type f | wc -l
 }
 
-# Then copy the executable file "blite" to the tests folder.
-cp "$T1/calc" $tests
+# Copy the executable file "valida" to the tests folder.
+cp "$T1/valida" $tests
 
 # Get the tests in folder inputs
 cd "$tests"
@@ -28,13 +27,16 @@ for t in $mytests; do
     n1=`diff -bB -iw "$tests/$name" "$tests/$ora" | grep "^>" | wc -l`
     n2=`diff -bB -iw "$tests/$name" "$tests/$ora" | grep "^<" | wc -l`
     if [[ $n1 -eq 0 ]] && [[ $n2 -eq 0 ]] ; then
-        echo "OK"
+        echo "PASS"
     else
         echo "FAIL"
     fi
 done
 
-rm "$tests/calc" 
-rm "$T1/calc" 
+rm "$tests/valida"
+rm "$T1/valida"
+rm "$T1/lex.yy.c"
+rm "$T1/e2.tab.c"
+rm "$T1/e2.tab.h"
 cd "$T1"
 
