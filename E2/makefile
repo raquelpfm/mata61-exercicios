@@ -5,7 +5,7 @@ install:
 compile:
 	bison -d e2.y
 	flex e2.l
-	cc -o calc lex.yy.c e2.tab.c main.c
+	cc -o valida lex.yy.c e2.tab.c main.c
 
 test:
 	./run_tests.sh

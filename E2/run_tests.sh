@@ -24,7 +24,7 @@ for t in $mytests; do
     name="$(basename $t .in).out"
     ora="$(basename $t .in).ora"
     echo "running $t ..."
-    ./calc < "$tests/$t" > "$tests/$name"
+    ./valida < "$tests/$t" > "$tests/$name"
     n1=`diff -bB -iw "$tests/$name" "$tests/$ora" | grep "^>" | wc -l`
     n2=`diff -bB -iw "$tests/$name" "$tests/$ora" | grep "^<" | wc -l`
     if [[ $n1 -eq 0 ]] && [[ $n2 -eq 0 ]] ; then
