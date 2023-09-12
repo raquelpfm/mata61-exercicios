@@ -42,10 +42,12 @@ e reportar "syntax error" para expressões mal-formadas.
 
 #### Em sua máquina (local)
 
-- Para testar a calculadora com os testes fornecidos, 
-faça um ```make compile``` seguido por um ```make tests```;
-- Para executar apenas um teste, faça um```make compile``` ,
+_Obs._: Teste localmente antes de subir sua resposta para o servidor.
+
+- Para executar apenas, faça um```make compile``` ,
 execute ```./valida``` e digite uma expressão aritmética.
+- Para testar o analisador com os testes fornecidos, 
+faça um ```make compile``` seguido por um ```make test```;
 
 #### No servidor (remoto)
 - Quando fizer o ```push``` para subir a sua resposta,
@@ -57,9 +59,11 @@ e uma mensagem ```All checks have failed``` aparecerá.
 Clique em ```details``` para ver os problemas.
 
 
-## Resposta
+## Entrega
 
-Arquivo e2.y com gramática livre de contexto, sem ambiguidade,
-para a calculadora, em um ```commit``` com símbolo verde.
+No GitHub.
+Programa bison E2/e2.y contendo uma gramática livre de contexto não-ambîgua 
+com regras de produção para o analisador de expressões ("valida").
+
 
 
