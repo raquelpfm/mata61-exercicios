@@ -27,8 +27,7 @@ program
 : expr EOL { return 1; }
 ;
 
-/* completar aqui */
-
+/* resposta aqui */
 
 %%
 

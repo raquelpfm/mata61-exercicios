@@ -24,3 +24,4 @@ jobs:
       run: make compile
     - name: test
       run: make test
+
