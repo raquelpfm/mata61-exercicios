@@ -1,6 +1,6 @@
-#install:
-#	sudo apt-get install -f flex
-#	sudo apt-get install bison
+install:
+	sudo apt-get install -f flex
+	sudo apt-get install bison
 
 compile:
 	bison -d e2.y
@@ -11,7 +11,7 @@ test:
 	./run_tests.sh
 
 all:
-#	make install
+	make install
 	make compile
 	make test
 
