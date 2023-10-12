@@ -5,8 +5,12 @@
 /* interface to the lexer */
  
 extern int yylineno; /* from lexer */
-void yyerror(char *s, ...);
 int yylex();
+
+void yyerror(char *s, ...)
+{
+    fprintf(stderr,"%s\n",s);
+}
 %}
 
 /* declare tokens */ 
@@ -16,7 +20,6 @@ int yylex();
 %token PLUS
 %token MINUS
 %token TIMES
-%token DIV
 %token OPENP
 %token CLOSEP
 
@@ -24,10 +27,23 @@ int yylex();
 
 %%
 program
-: expr EOL { return 1; }
+: expr EOL { return 0; }
 ;
 
-/* resposta aqui */
+expr
+: expr PLUS term
+| expr MINUS term
+| term
+;
+
+term
+: term TIMES factor
+| factor
+;
+
+factor
+: NUMBER 
+;
 
 %%
 

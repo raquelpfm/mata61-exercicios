@@ -3,9 +3,9 @@ install:
 	sudo apt-get install bison
 
 compile:
-	bison -d e2.y
-	flex e2.l
-	cc -o valida lex.yy.c e2.tab.c main.c
+	bison -d e7.y
+	flex e7.l
+	cc -o interpreta lex.yy.c e7.tab.c main.c
 
 test:
 	./run_tests.sh

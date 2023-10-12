@@ -1,4 +1,4 @@
-name: E2
+name: E7
 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
@@ -13,7 +13,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-  # working-directory is ./E2
+  # working-directory is ./E7
 
 jobs:
   test:
@@ -21,12 +21,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: install
-      working-directory: ./E2
+      working-directory: ./E7
       run: make install
     - name: compile files
-      working-directory: ./E2
+      working-directory: ./E7
       run: make compile
     - name: test
-      working-directory: ./E2
+      working-directory: ./E7
       run: make test
-
