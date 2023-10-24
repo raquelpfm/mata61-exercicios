@@ -3,7 +3,7 @@ install:
 
 compile:
 	bison -d e8.y
-	cc -o avalia lex.yy.o e8.tab.c main.c
+	cc -o avalia lex.yy.c e8.tab.c main.c
 
 
 test:
