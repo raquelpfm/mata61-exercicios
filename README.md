@@ -1,6 +1,2 @@
 # MATA61 - Exercícios
 
-
-
-
-
