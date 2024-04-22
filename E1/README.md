@@ -15,8 +15,10 @@ O código-fonte deve ser colocado em um arquivo chamado de mywc.l;
 - Teste seu programa mywc, usando como entrada o arquivo README.md;
 - Teste o wc do linux, usando como entrada o arquivo README.md;
 6. Por que há diferença entre as saídas?
+
+b) mywc-linux.l
 7. Copie mywc.l para mywc-linux.l;
 8. Modifique mywc-linux.l para que a saída gerada sera a mesma do wc do linux.
-Repita os passos 2-5, usando o mywc-linux.l e com o mywc-linux executável.
+Repita os passos 2-5 acima, usando o mywc-linux.l e com o mywc-linux executável.
 
 
