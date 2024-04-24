@@ -11,7 +11,7 @@ function total_files {
 }
 
 # Copy the executable file "valida" to the tests folder.
-cp "$T1/valida" $tests
+cp "$T1/analisa-e2" $tests
 
 # Get the tests in folder inputs
 cd "$tests"
@@ -23,7 +23,7 @@ for t in $mytests; do
     name="$(basename $t .in).out"
     ora="$(basename $t .in).ora"
     echo "running $t ..."
-    ./valida < "$tests/$t" > "$tests/$name"
+    ./analisa-e2 < "$tests/$t" > "$tests/$name"
     n1=`diff -bB -iw "$tests/$name" "$tests/$ora" | grep "^>" | wc -l`
     n2=`diff -bB -iw "$tests/$name" "$tests/$ora" | grep "^<" | wc -l`
     if [[ $n1 -eq 0 ]] && [[ $n2 -eq 0 ]] ; then
@@ -33,10 +33,8 @@ for t in $mytests; do
     fi
 done
 
-rm "$tests/valida"
-rm "$T1/valida"
+rm "$tests/analisa-e2"
+rm "$T1/analisa-e2"
 rm "$T1/lex.yy.c"
-rm "$T1/e2.tab.c"
-rm "$T1/e2.tab.h"
 cd "$T1"
 
