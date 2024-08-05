@@ -2,13 +2,14 @@
 
 
 Análise léxica com Flex. 
-Olhar o capítulo 2 do livro do Levine (Flex&Bison).
 
 - Implementar um analisador léxico para expressões aritméticas.
 
+Olhar o capítulo 2 do livro do Levine (Flex&Bison).
 
 - Fazer um analisador léxico para expressões aritméticas sobre números inteiros e os operadores +  -  *  e  / .
 O programa recebe uma expressão digitada na entrada padrão -- apenas uma expressão por linha e, a cada chamada da função yylex(), o analisador léxico  retorna o código do token (valor inteiro) e, para dígitos, também o seu valor. Usar o token ERROR para indicar erro léxico.
+O programa main.c deve chamar yylex() e imprimir a saída conforme mostrado abaixo.
 
 #  Exemplo. 
   - Entrada:  90 * 100 / 18 - 48 + 77
