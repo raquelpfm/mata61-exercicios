@@ -1,11 +1,11 @@
 # E3 - Exercício 3
 
 
-Modifique o seu analisador léxico para compL de modo que os códigos dos tokens retornados sejam mais específicos.
-Por exemplo, ao invés de retornar o token SYMC para o símbolo composto "<=", retornar o token 
-LTE.
+Modifique o seu analisador léxico para compL de modo que os códigos dos tokens retornados sejam mais específicos. Por exemplo, ao invés de retornar o token SYMC para o símbolo composto "<=", retornar o token 
+LEQ, ou, ao invés de retornar o token KEY para a palavra-chave "if", retornar o token IF.
+Para símbolos simples, ao invés de retornar SYM, pode retornar a representação ASCII para o caracter reconhecido.
 
-Para isso, **deverá alterar os arquivos compl.l e token.h**
+Para isso, **deve alterar os arquivos compl.l e token.h**
 
 ```
 /* token.h */
@@ -17,7 +17,7 @@ typedef enum {
         IF,    // inseriir IF e outras palavras-reservadas
         //        remover SYM e ver como vai retornar símbolos simples
         //        remover SYMC,
-        LTE,   // incluir LTE, e assim por diante
+        LEQ,   // por exemplo, incluir LEQ, "less or equal", e assim por diante.
         CHAR,
         STR,
         ERROR,
@@ -28,10 +28,11 @@ typedef enum {
 ```
 #include "token.h"
 
-"if"            { return IF; }
+"if"            { return IF; }  
 ...
+"+"             { return ... // completar }
 
-"<="            { return LTE; }                                                                                                      
+"<="            { return LEQ; }                                                                                                      
 ````
 
 
@@ -41,7 +42,7 @@ typedef enum {
 Seguir os mesmos passos para compilar, rodar e testar usados no T1.
 Observe que o arquivo ```main.c``` está modificado.
 
-Os arquivos na pasta T1/_src_ do repositório são
+Os arquivos na pasta E3/src do repositório são
 ```compl.l```, ```token.h``` e ```main.c```.
 Editar e modificar o arquivo _compl.l_ e o arquivo _token,h".
 

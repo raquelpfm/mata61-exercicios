@@ -11,6 +11,7 @@
 
 %%
 
+"if" 				{ return IF; } // incluir IF em token.h
 
 . 				{ return ERROR; }
 
