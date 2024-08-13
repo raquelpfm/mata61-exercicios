@@ -1,19 +1,26 @@
-/* recognize tokens for the calculator */
-
-%option noyywrap nodefault yylineno
 %{
+#include <stdio.h>
+#include <stdlib.h>
 #include "token.h"
+
+int yylval;
 
 %}
 
 %%
 
-.       { return ERROR; }
+[0-9]+        { yylval = atoi(yytext); return NUMBER; }
+\+             { return PLUS; }
+\-             { return MINUS; }
+\*             { return TIMES; }
+\/             { return DIV; }
+\n             { return EOL; }
+.              { return ERROR; }
+
 %%
 
-int main() {
-
-
+int yywrap() {
+    return 1;
 }
 
 
